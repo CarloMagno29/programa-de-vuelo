@@ -1,4 +1,4 @@
-module.exports = persona;
+//module.exports = persona;
 
 /// cabecero ticket
 
@@ -9,7 +9,7 @@ let nube = "☁️";
 function MapaAvion(){
     let MapaAvion = [
       ["E", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "E"],
-      [  0, 0, 0, 0, 2, 2,1,"AEROLINEA CHARLIE".blue.bold,1,2, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2],
+      [2,0, 1,"BIENVENIDOS AEROLINEA CHARLIE".blue.bold,1,0,2, 2, 2,2,2 ,2, 2, 2,2,2,2,2,2,2],
       ["E", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "E"],
      
     ]
@@ -48,7 +48,7 @@ function salir(){
 var colors = require('colors');
 let = persona;
 var readLineSync = require('readline-sync');
-let nacionalidad = ['Espana','Argentina','Bolivia','Brasil','Chile','Colombia','Costa Rica','Cuba','Ecuador','El Salvador','Guayana Francesa','Granada','Guatemala','Guayana','Haití','Honduras','Jamaica','México','Nicaragua','Paraguay','Panamá','Perú','Puerto Rico','República Dominicana','Surinam','Uruguay','Venezuela'];
+let nacionalidad = ['Espana','Argentina','Bolivia','Brasil','Chile','Colombia','Costa Rica','Cuba','Ecuador','El Salvador','Guayana Francesa','Granada','Guatemala','Guayana','Haiti','Honduras','Jamaica','Mexico','Nicaragua','Paraguay','Panama','Peru','Puerto Rico','Republica Dominicana','Surinam','Uruguay','Venezuela'];
 let ocupacion = ['Estudiante', 'Arte', 'Negocios', 'Salud', 'Politica', 'tecnologia', 'Educacion', 'Comunicacion', 'Ingenieria', 'Alternativo', 'Desempleado','Otro'];
 let motivoviaje =['Negocios', 'Turismo','Educacion','Trabajo','Reunion familiar', 'Otro'];
 let estatusMig =['Ciudadano', 'Residente permanente', 'Asilado/refugiado', 'turista', 'investor', 'otro'];
@@ -57,14 +57,17 @@ let estatusMig =['Ciudadano', 'Residente permanente', 'Asilado/refugiado', 'turi
 
 function persona(){
 
-nombre = readLineSync.question('Bienvenido. Ingrese su nombre y apellido para iniciar: ');
-console.log('Hola ' + nombre +', a continuacion se le haran unas preguntas de informacion personal');
-var id = readLineSync.question('Ingrese su numero de identificacion: ', salir);
-var pass = readLineSync.question('Numero de pasaporte: ', salir);
-var naci = readLineSync.keyInSelect(nacionalidad, 'Indique nacionalidad: ', salir);
-const ocu = readLineSync.keyInSelect(ocupacion, 'Seleccione la industria a la que se dedica: ', salir);
-var mot = readLineSync.keyInSelect(motivoviaje,'Indique su motivo de viaje: ', salir);
-var mig = readLineSync.keyInSelect(estatusMig,'Seleccione su estatus migratorio: '), salir;
+nombre = readLineSync.question('Por Favor, ingrese su nombre y apellido para iniciar: '.bold.blue);
+console.clear();
+console.log('Hola '.blue.bold + nombre .blue.bold+', a continuacion se le haran unas preguntas de informacion personal'.bold.blue);
+var id = readLineSync.question('*Ingrese su numero de identificacion: '.bold.blue, salir);
+var pass = readLineSync.question('*Numero de pasaporte: '.bold.blue, salir);
+var naci = readLineSync.keyInSelect(nacionalidad, '*Indique nacionalidad: '.bold.blue, salir);
+const ocu = readLineSync.keyInSelect(ocupacion, '*Seleccione la industria a la que se dedica: '.bold.blue, salir);
+var mot = readLineSync.keyInSelect(motivoviaje,'*Indique su motivo de viaje: '.bold.blue, salir);
+var mig = readLineSync.keyInSelect(estatusMig,'*Seleccione su estatus migratorio: '.bold.blue), salir;
+
+
 
 // seleccion de las listas
 
@@ -88,5 +91,9 @@ return {
 
 }
 
+
 MapaAvion();
-persona();
+//persona();
+
+let personaExport = persona()
+module.exports = personaExport;

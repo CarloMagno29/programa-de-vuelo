@@ -1,4 +1,4 @@
-var available = require("");
+//var available = require("./disponibilidad");
 var readLine = require("readline-sync");
 var colors = require("colors");
 
@@ -8,19 +8,19 @@ var vacunas = ["pfizer ", " aztrazeneca ", " j&j ", " moderna ", " otra" + " "]
 var sintomas = ["fiebre ", " dolor de cabeza ", " malestar estomacal "];
 // Poner que no se inica si no pasa la parte 2 (disponibilidad)
 
-console.log("=".repeat(50).red)
-    console.log("preguntas de bioseguridad".toLocaleUpperCase().red);
-console.log("=".repeat(50).red)
+console.clear();
+
+console.log("=".repeat(60).blue.bold)
+    console.log("Para proceder llene el siguiente formulario de bioseguridad".toLocaleUpperCase().blue.bold);
+console.log("=".repeat(60).blue.bold)
 
     function seguridad (){
-      if  (available.disponibilidad == false){
-          return {requisitos:false}
-      };
 
+      
         let firstQ = readLine.question("Esta usted vacunado? si/no :" + " ");
             let siOno = vacunaSioNO.find(vaccine => vaccine == firstQ);
                     if (siOno == "no"){
-                         console.log("no puede abordar".yellow.bgRed.bold);
+                        console.log("Por no cumplir las medidas de Bioseguridad no podemos venderle boletos. Feliz dia".yellow.bgBlue.bold);
                             return {requisitos:false}
                         }else{
                           (console.log("genial".blue)
@@ -31,7 +31,7 @@ console.log("=".repeat(50).red)
          let secondQ = readLine.question("ha presentado estos sintomas? "+ sintomas + "si/no: ");
              let siOno2 = enfermoSioNo.find(sintoms => sintoms == secondQ);
                      if (siOno2 == "si"){
-                         console.log("no puede abordar".yellow.bgRed.bold);
+                        console.log("Por no cumplir las medidas de Bioseguridad no podemos venderle boletos. Feliz dia".yellow.bgBlue.bold);
                          return {requisitos:false}
                    }else{
                       (console.log("genial".blue))
@@ -47,7 +47,7 @@ console.log("=".repeat(50).red)
         let fourthQ = readLine.question("ha tenido covid en el pasado? si/no " + " ");
              let siOno4 = vacunaSioNO.find(covidpass => covidpass == fourthQ);
                     if (siOno4 == "si"){
-                       console.log("no puede abordar".yellow.bgRed.bold);
+                        console.log("Por no cumplir las medidas de Bioseguridad no podemos venderle boletos. Feliz dia".yellow.bgBlue.bold);
                        return {requisitos:false}
                         }else{
                             (console.log("genial".blue))
@@ -58,7 +58,7 @@ console.log("=".repeat(50).red)
         let fifthQ = readLine.question("Hace usted uso de la mascarilla? si/no "); 
             let siOno5= vacunaSioNO.find(mask => mask == fifthQ);
                   if(siOno5 == "no"){
-                    console.log("no puede abordar".yellow.bgRed.bold);
+                    console.log("Por no cumplir las medidas de Bioseguridad no podemos venderle boletos. Feliz dia".yellow.bgBlue.bold);
                     return {requisitos:false}
                 }else{
                     console.log("genial".blue)
@@ -69,5 +69,5 @@ console.log("=".repeat(50).red)
 };
 
 let s = seguridad();
-console.log(s);
+//console.log(s);
 module.exports = s;
