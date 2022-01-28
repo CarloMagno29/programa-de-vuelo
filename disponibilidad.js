@@ -57,7 +57,7 @@ function boletador(){
     if (vueloSeleccionado == -1 ){
         return rechazador()
     }
-    return listaVuelosDisp[vueloSeleccionado]
+    return {habilitado: true , boleto: listaVuelosDisp[vueloSeleccionado]}
 
 
 
