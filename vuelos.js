@@ -1,7 +1,7 @@
 class vuelo {
     constructor(avion, trip, pasajeros, origen, destino, fecha ){
         this.tipo = avion.tipo;
-        this.numAvion = avion.num;
+        this.num = avion.num;
         this.tripulacion = trip;
         this.listaPasajeros = pasajeros;
         this.origen = origen;
