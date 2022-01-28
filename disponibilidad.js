@@ -2,7 +2,6 @@ const readlineSync = require('readline-sync');
 var colors = require('colors');
 const [vuelos] = require('./vuelos')
 
-
 function ciudadesDisponibles(vuelos){
     let listaDestinos = []
     vuelos.filter(function(vuelo){
@@ -65,7 +64,6 @@ function boletador(){
         return rechazador()
     }
     return {habilitado: true , boleto: listaVuelosDisp[vueloSeleccionado],claseSeleccionada}
-
 
 
 }
