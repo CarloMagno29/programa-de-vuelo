@@ -8,7 +8,7 @@ function ciudadesDisponibles(vuelos){
             listaDestinos.push(vuelo.obtenerDestino)
         }
     })
-    return listaDestinos
+    return listaDestinos;
 }
 
 function clasificadorVuelos(vuelos){

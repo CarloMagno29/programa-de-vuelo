@@ -98,7 +98,7 @@ function crearAviones(){
         let avionRand = new avion(i+1)
         let fechaRand = crearFecha(avionRand.tipo)
         let creaVuelo = new vuelo(avionRand,tripRand, passajerosRand, "Venezuela", destinoRand, fechaRand, avionRand )
-        vuelos.push(creaVuelo)
+        vuelos.push(creaVuelo);
     }
 }
 crearAviones()
