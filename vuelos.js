@@ -1,6 +1,7 @@
 class vuelo {
-    constructor(tipoAvion, trip, pasajeros, origen, destino, fecha ){
-        this.tipo = tipoAvion;
+    constructor(avion, trip, pasajeros, origen, destino, fecha ){
+        this.tipo = avion.tipo;
+        this.numAvion = avion.num;
         this.tripulacion = trip;
         this.listaPasajeros = pasajeros;
         this.origen = origen;
@@ -27,7 +28,7 @@ class tripulacion{
 class avion{
     constructor(num){
         this.numVuelo = num
-        this.esIdaYVuelta = Math.round(Math.random())
+        this.esIdaYVuelta = Math.round(Math.random()) // 0 / 1
         if (this.esIdaYVuelta == 0){
             this.esIdaYVuelta = false;
         }
@@ -37,6 +38,9 @@ class avion{
     }
     get tipo(){
         return this.esIdaYVuelta
+    }
+    get num(){
+        return this.numVuelo
     }
 }
 
