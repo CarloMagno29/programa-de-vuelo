@@ -62,7 +62,7 @@ function boletador(){
 
 
 }
-let boleto = boletador()
-console.log(boleto)
-module.exports = boleto;
+let bolet = boletador()
+console.log(bolet.boleto)
+module.exports = bolet;
 //console.log(vuelos)
