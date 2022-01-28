@@ -22,10 +22,12 @@ function rechazador(){
     return {habilitado:false}
 }
 function boletador(){
+    let claseVuelo = ['Clase Turista', 'Primera Clase']
+    let claseSeleccionada = readlineSync.keyInSelect(claseVuelo,'Seleccione el tipo de vuelo desea tomar: ', {cancel:false})
+    claseSeleccionada = claseVuelo[claseSeleccionada]
     let listaTipos = ['Simple','Ida y Vuelta']
     let tipoVuelo = readlineSync.keyInSelect(listaTipos,'Seleccione el tipo de vuelo desea tomar: ',{cancel: false})
     let listaPaisesDisp = ciudadesDisponibles(vuelos)
-    console.log(tipoVuelo)
     let paisSeleccionado = readlineSync.keyInSelect(
         listaPaisesDisp,
          'Debido a la pandemia global solo tenemos disponibles vuelos a paises Hispanohablantes.\nPor favor, seleccione una de las opciones disponibles: ',
@@ -35,14 +37,15 @@ function boletador(){
         return rechazador()
     }
 
-    let listaVuelosTipo = clasificadorVuelos(vuelos)
-    let vuelosDisp = listaVuelosTipo[tipoVuelo]
-    console.log(listaVuelosTipo)
-    console.log(vuelosDisp)
-    /*
-    if (vuelosDisp.length){
+    let listaVuelosPorTipo = clasificadorVuelos(vuelos)
+    let vuelosDisp = listaVuelosPorTipo[tipoVuelo]
+    if (vuelosDisp.length == 0){
         return rechazador()
     }
+    console.log(vuelosDisp.map(x=>x.destino))
+    console.log(listaPaisesDisp[paisSeleccionado])
+    console.log(vuelosDisp.includes(listaPaisesDisp[paisSeleccionado]))
+    /*
     if (vuelosDisp.includes(listaPaisesDisp[paisSeleccionado])){
         let listaVuelosDisp = vuelosDisp.map(x => {
             if(x.destino == listaPaisesDisp[paisSeleccionado]){
@@ -56,5 +59,6 @@ function boletador(){
     }
     */
 }
-boletador()
-//console.log(vuelos)
+let boleto = boletador()
+module.exports = boleto;
+//console.log(vuelos)*/
