@@ -85,10 +85,10 @@ function MapaAvion(){
          barraSeparador();
         console.log ("***DATOS DEL PASAJERO***\n".black.bold,"Nombre:".bold, personaExport.name,"\n", "Cedula/ID:".bold,personaExport.Ced, "\n", "Nacionalidad".bold, personaExport.nacional,"\n");
         barraSeparador();
-        await waitFor (2000)   
+        await waitFor (2000)
         if (datos.boleto.tipo == false ) {
             var boletoTipo = "Simple";
-        }  
+        }
         else{
             var boletoTipo = "Ida y Vuelta";
         }
